@@ -1,4 +1,5 @@
 // #include <iostream>
+// #include<cmath>
 
 // void printUpTo999(int upto999);
 // void upto99(uint64_t num);
@@ -27,35 +28,30 @@
 //     //9 00 00 000 Q=9 00 00 R=000 
 //     if(thousandOrMore > 0)
 //     {
-//         uint64_t hundredlakhs = thousandOrMore / 100; //90 00 00
-        
-//         uint64_t crores = hundredlakhs / 100; //9
-//         uint64_t lakhs = hundredlakhs % 100; //00
+//         uint64_t factor = 100;
+//         uint64_t divisor = 1;
 
-//         uint64_t thousands = thousandOrMore % 100; //00
-        
-//         if(crores > 0) 
+//         for(size_t i=3; i>=1; i--)
 //         {
-//             upto99(crores);
-//             std::cout << " " << places[3];
-//         }
+//             divisor = pow(factor,i-1);
+//             auto bracketValue = thousandOrMore / divisor;
 
-//         if(lakhs > 0)
-//         {
-//             upto99(lakhs);
-//             std::cout << " " << places[2];
-//         }
-
-//         if(thousands > 0)
-//         {
-//             //print thousands
-//             upto99(thousands);
-//             std::cout << " " << places[1];
+//             if(bracketValue > 0) 
+//             {
+//                 if(i==3)
+//                 {
+//                     printUpTo999(bracketValue); //hundreds of crore
+//                 }
+//                 else
+//                 {
+//                     upto99(bracketValue); // 0-99 lakhs and thousands
+//                 }
+//                 std::cout << " " << places[i];
+//             }
+//             thousandOrMore = thousandOrMore % divisor;
 //         }
 //     }
-    
 //     printUpTo999(upto999);
-
 // }
 
 // void printUpTo999(int upto999)
