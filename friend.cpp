@@ -28,6 +28,9 @@
     
 //     friend void List::display();
 //     friend void List::append(Node* np);
+//
+//     //When multiple member functions need to be friend, it is better to use friend class
+//     //friend class List;
 // };
 
 // void List::display()
